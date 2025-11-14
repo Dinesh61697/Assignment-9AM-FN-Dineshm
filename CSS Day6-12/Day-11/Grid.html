@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container{
+            display:grid;
+            background:red;
+            color:white;
+            grid-gap:10px;
+            grid-template-columns:1fr 1fr 1fr;
+            grid-template-rows:100px 300px 10px;
+
+        }
+
+
+        .container div{
+            background-color:aqua
+            padding:20px;
+            text-align: center;
+        }
+
+
+        .grid-box{
+            display:grid;
+            grid-template-rows: 100px 200px 300px;
+            gap:20px;
+        }
+
+        .grid-box div{
+            background-color: chartreuse;
+            color: black;
+            text-align: center;
+            padding:50px;
+        }
+
+        .layout{
+            display:grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+            "header header"
+            "sidebar main"
+            "footer footer"
+            ;
+        }
+
+        .header{
+            background-color: deeppink;
+            grid-area: header;
+        }
+
+        .sidebar{
+            background-color: orange;
+            grid-area:sidebar;
+        }
+
+        .main{
+            background-color: blueviolet;
+            grid-area: main;
+        }
+
+        .footer{
+            background-color: darksalmon;
+            grid-area:footer ;
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+    
+
+
+    <div class="layout">
+        <div class="header">header</div>
+        <div class="sidebar">sidebar</div>
+        <div class="main">main</div>
+        <div class="footer">footer</div>
+    </div>
+
+
+
+    <div class="grid-box">
+        <div>header</div>
+        <div>main</div>
+        <div>footer</div>
+    </div>
+    
+
+
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+</body>
+</html>
