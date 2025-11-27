@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gridareas</title>
+    <style>
+        .layout {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "saidbar main main"
+                "footer footer footer";
+            grid-gap: 10px;
+            background-color: #191c1e;
+            padding:10px;
+        }
+
+        .layout div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .saidbar {
+            grid-area: saidbar;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+</style>
+
+</head>
+<body>
+    <div class="layout">
+
+        <div class="header">header</div>
+        <div class="saidbar">sidebar</div>
+        <div class="main">main</div>
+        <div class="footer">footer</div>
+    </div>
+
+    
+</body>
+</html>

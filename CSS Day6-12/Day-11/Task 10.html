@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog homepage</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+        }
+        h2{
+             text-align: center;
+             text-shadow: rgb(128, 7, 7);
+            background-color: blueviolet;
+            padding: 10px;
+
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto 1fr auto;
+            gap: 15px;
+            grid-template-areas:
+                "header header"
+                "featured sidebar"
+                "posts sidebar"
+                "footer footer";
+            padding: 20px;
+
+        }
+
+        .header {
+            grid-area: header;
+            background-color: blue;
+            color: black;
+            padding: 20px;
+        }
+
+        .featured {
+            grid-area: featured;
+            background-color: green;
+            color: white;
+            padding: 20px;
+        }
+
+        .posts {
+            grid-area: post;
+            background-color: yellow;
+            color: rgb(99, 4, 4);
+            padding: 20px;
+            
+
+        }
+
+        .post {
+            padding: 15px;
+            background-color: green;
+            border: 2px;
+            text-align: center;
+            margin: 10px;
+
+
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: rgb(227, 120, 120);
+            padding: 8px;
+        
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+          
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <headerm class="header">My Blog</header>
+            <section class="Featured">
+                <h2>Featured Post</h2>
+                <p>This is the main featured article of the blog...</p>
+            </section>
+            <section class="posts">
+                <article class="post">post 1</article>
+                <article class="post">post 2</article>
+                <article class="post">post 3</article>
+                <article class="post">post 4</article>
+
+
+            </section>
+            <aside class="sidebar">
+                <h3>Sidebar</h3>
+                <ul>
+                    <li>About</li>
+                    <li>Categories</li>
+                    <li>Archives</li>
+
+                </ul>
+
+            </aside>
+
+            <footer class="footer">@2025 my Blog</footer>
+
+    </div>
+
+</body>
+
+</html>
