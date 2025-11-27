@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple layout Dashboard</title>
+    <style>
+
+    * {
+    margin: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+   }
+
+   body {
+    font-family: Arial, sans-serif;
+  }
+  .dashboard {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 60px 1fr 50px;
+    height: 100vh;
+    gap: 10px;
+    padding: 20px;
+ }
+ .header {
+    grid-area: header;
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: salmon;
+    color: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    background: #ecf0f1;
+    border-radius: 5px;
+}
+
+.footer {
+    grid-area: footer;
+    background:black;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Cards in Main Area */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 1fr 50px;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">Dashboard Header</header>
+        <aside class="sidebar">Sidebar Menu</aside>
+        <main class="main">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+            <div class="card">Card 4</div>
+        </main>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>

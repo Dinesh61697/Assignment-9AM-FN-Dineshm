@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .box {
+    border: 2px solid black;
+    padding: 10px;
+  }
+  
+  .left {
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+    height: 80px;
+    background: lightblue;
+  }
+  
+  .right {
+    float: right;
+    margin-left: 10px;
+    width: 100px;
+    height: 80px;
+    background: lightgreen;
+  }
+  
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
+</head>
+<body>
+
+<div class="box clearfix">
+  <div class="left">Left</div>
+  <div class="right">Right</div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ratione, debitis facilis deleniti possimus sit?</p>
+</div>
+
+</body>
+</html>

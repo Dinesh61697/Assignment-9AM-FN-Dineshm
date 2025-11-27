@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid using coloumn</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Arial', sans-serif;
+            background:plum;
+        }
+        
+        .equal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .grid-item {
+            background: white;
+            padding: 60px 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            transition: transform 0.5s ease;
+        }
+        
+        .grid-item:hover {
+            transform: translateY(-8px);
+        }
+        
+    
+        @media (max-width: 768px) {
+            .equal-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .equal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="equal-grid">
+        <div class="grid-item">Dinesh</div>
+        <div class="grid-item">Santhosh kumar</div>
+        <div class="grid-item">Kishoree</div>
+        <div class="grid-item">Anbu</div>
+        <div class="grid-item">Ifran</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid and flexbox</title>
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+            box-sizing: border-box;    
+        }
+
+        body{
+            font-family:ariel;
+            padding:20px;
+            background:#f0f0f0;
+        }
+        .container{
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap:15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .box{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:25px;
+            background: yellow;
+            border-radius: 10px;
+            text-align:center;
+        }
+
+        @media(max-width:600px){
+            .container{grid-template-columns: 2fr;}
+        }
+
+    </style>
+</head>
+<body>
+       <div class="container">
+        <div class="box">Box 1 Content</div>
+        <div class="box">Box 2 Content</div>
+        <div class="box">Box 3 Content</div>
+        <div class="box">Box 4 Content</div>
+    </div>
+
+</body>
+</html>

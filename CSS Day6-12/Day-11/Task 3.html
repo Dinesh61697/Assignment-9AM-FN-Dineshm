@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 100px 100px;
+            gap: 30px; 
+        }
+
+        .item {
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+            background: #f8f9fa;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+
+        .gap-control {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 18px;
+        }
+</style>
+</head>
+<body>
+    <h1>Grid Gap Example</h1>
+    
+    <div class="gap-control">
+        Try changing 'gap: <strong>30px</strong>' in CSS to see different spacing!
+    </div>
+
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+</head>
+<body>
+    
+</body>
+</html>
