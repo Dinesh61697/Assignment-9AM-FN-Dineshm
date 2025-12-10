@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Settings Panel</h2>
+
+<p><strong>Default Settings:</strong></p>
+<p id="default"></p>
+
+<p><strong>User Settings (Updated):</strong></p>
+<p id="user"></p>
+
+<script>
+  const defaultSettings = {
+    theme: "Light",
+    fontSize: "16px",
+    language: "English"
+  };
+  let userSettings = {
+    theme: "Light",
+    fontSize: "16px",
+    language: "English"
+  };
+  userSettings.theme = "Dark";
+  userSettings.fontSize = "20px";
+  document.getElementById("default").innerHTML = JSON.stringify(defaultSettings, null, 2);
+  document.getElementById("user").innerHTML = JSON.stringify(userSettings, null, 2);
+</script>
+
+</body>
+</html>
