@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Color Buttons</title>
+</head>
+<body>
+
+  <h2>Click a Button to Change Background Color</h2>
+
+  <button class="colorBtn" data-color="red">Red</button>
+  <button class="colorBtn" data-color="green">Green</button>
+  <button class="colorBtn" data-color="blue">Blue</button>
+
+  <script>
+    let buttons = document.querySelectorAll(".colorBtn");
+
+
+    buttons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        document.body.style.backgroundColor = button.dataset.color;
+      });
+    });
+  </script>
+
+</body>
+</html>

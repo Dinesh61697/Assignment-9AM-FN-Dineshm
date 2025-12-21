@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerHTML Example</title>
+</head>
+<body>
+
+    <h2>Formated Text Output</h2>
+
+    <button id="showText">show Text</button>
+
+    <p id="output"></p>
+
+    <script>
+        document.getElementById("showText").addEventListener("click", function () {
+            document.getElementById("output").innerHTML =
+              "<b>Bold Text</b> and <i>Italic Text</i> added dynamically";
+        });
+    </script>
+    
+</body>
+</html>
