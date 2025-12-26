@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hover Menu</title>
+  <style>
+    /* Menu container */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 200px;
+      background-color: #333;
+    }
+
+    /* Menu items */
+    ul li {
+      position: relative;
+    }
+
+    ul li a {
+      display: block;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Hover effect */
+    ul li a:hover {
+      background-color: #555;
+    }
+
+    /* Submenu */
+    ul li ul {
+      display: none;
+      position: absolute;
+      left: 200px;
+      top: 0;
+      background-color: #444;
+      width: 200px;
+    }
+
+    /* Show submenu on hover */
+    ul li:hover ul {
+      display: block;
+    }
+
+    ul li ul li a {
+      background-color: #444;
+    }
+
+    ul li ul li a:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <ul>
+    <li>
+      <a href="#">Courses</a>
+      <ul>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+      </ul>
+    </li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+</body>
+</html>

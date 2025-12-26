@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Inheritance Example</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+    h1 { text-align: center; }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; }
+    .card h3 { margin: 10px 0; }
+    .card p { margin: 5px 0; }
+    .card button {
+      padding: 8px 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .card button:hover { background-color: #0056b3; }
+  </style>
+</head>
+<body>
+
+<h1>Product & Digital Product Example</h1>
+
+<div class="container" id="productContainer"></div>
+
+<script>
+  
+  class Product {
+    constructor(name, price, description, image) {
+      this.name = name;
+      this.price = price;
+      this.description = description;
+      this.image = image;
+    }
+
+    
+    displayProductConsole() {
+      console.log(`Name: ${this.name}`);
+      console.log(`Price: ₹${this.price}`);
+      console.log(`Description: ${this.description}`);
+      console.log(`Image URL: ${this.image}`);
+      console.log('-------------------------');
+    }
+
+    
+    displayProductHTML(containerId) {
+      const container = document.getElementById(containerId);
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${this.image}" alt="${this.name}">
+        <h3>${this.name}</h3>
+        <p>${this.description}</p>
+        <p>Price: ₹${this.price}</p>
+        <button>Buy Now</button>
+      `;
+      container.appendChild(card);
+    }
+  }
+
+  
+  class DigitalProduct extends Product {
+    constructor(name, price, description, image, downloadLink, fileSize) {
+      super(name, price, description, image); 
+      this.downloadLink = downloadLink;
+      this.fileSize = fileSize;
+    }
+
+  
+    displayProductHTML(containerId) {
+      const container = document.getElementById(containerId);
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${this.image}" alt="${this.name}">
+        <h3>${this.name} (Digital)</h3>
+        <p>${this.description}</p>
+        <p>Price: ₹${this.price}</p>
+        <p>File Size: ${this.fileSize} MB</p>
+        <a href="${this.downloadLink}" target="_blank">
+          <button>Download</button>
+        </a>
+      `;
+      container.appendChild(card);
+    }
+  }
+
+  
+  const products = [
+    new Product("Wireless Mouse", 499, "Ergonomic wireless mouse", "https://via.placeholder.com/300"),
+    new DigitalProduct("E-book: JavaScript Basics", 299, "Learn JS from scratch", "https://via.placeholder.com/300", "https://example.com/download", 5),
+    new Product("Bluetooth Headphones", 1299, "Noise-cancelling headphones", "https://via.placeholder.com/300"),
+    new DigitalProduct("Online Course: Web Development", 1999, "Complete web dev course", "https://via.placeholder.com/300", "https://example.com/course", 500)
+  ];
+
+  
+  products.forEach(product => {
+    product.displayProductConsole(); 
+    product.displayProductHTML("productContainer"); 
+  });
+</script>
+
+</body>
+</html>

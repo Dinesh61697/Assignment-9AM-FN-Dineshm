@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card button {
+      padding: 8px 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Product Listing / Portfolio</h1>
+
+  <div class="container" id="portfolio">
+    
+  </div>
+
+  <script>
+    const projects = [
+      { title: "Calculator App", image: "https://via.placeholder.com/300", desc: "HTML CSS JS Calculator" },
+      { title: "To-Do App", image: "https://via.placeholder.com/300", desc: "Task Management App" },
+      { title: "Portfolio Website", image: "https://via.placeholder.com/300", desc: "Personal Portfolio" }
+    ];
+
+    const portfolio = document.getElementById("portfolio");
+
+    projects.forEach(project => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <img src="${project.image}">
+        <h3>${project.title}</h3>
+        <p>${project.desc}</p>
+        <button>View</button>
+      `;
+
+      portfolio.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>

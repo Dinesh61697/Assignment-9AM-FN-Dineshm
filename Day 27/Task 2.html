@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change color</title>
+
+    <style>
+        
+        p:hover{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>change text color on hover</p>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="text">Hover over me</p>
+
+    <script>
+        const text=document.getElementById("text");
+
+        text.addEventListener("mouseover", function(){
+            text.style.color ="blue";
+        });
+
+        text.addEventListener("mouseout" ,()=>{
+            text.style.color="black"
+
+        });
+    </script>
+    
+</body>
+</html>

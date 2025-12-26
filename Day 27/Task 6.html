@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Counter</title>
+</head>
+<body>
+
+    <h2>Counter: <span id="count">0</span></h2>
+
+
+    <button id="increase">increase</button>
+    <button id="Decrease">Decrease</button>
+    <button id="reset">reset</button>
+
+
+    <script>
+        let counter = 0;
+        const countDisplay = document.getElementById("count");
+
+
+        document.getElementById("increase").addEventListener("click",() => {
+            counter++;
+            countDisplay.innerText = counter;
+
+        });
+
+        document.getElementById("Decrease").addEventListener("click",() => {
+            counter--;
+            countDisplay.innerText = counter;
+        });
+
+
+        document.getElementById("reset").addEventListener("click",() => {
+            counter=0;
+            countDisplay.innerText = counter;
+        });
+    </script>
+    
+</body>
+</html>

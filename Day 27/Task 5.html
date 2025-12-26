@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display Clicked Text</title>
+</head>
+<body>
+
+  <button>HTML</button>
+  <button>CSS</button>
+  <button>JavaScript</button>
+
+  <p id="output"></p>
+
+  <script>
+    
+    const buttons = document.querySelectorAll("button");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", function () {
+        document.getElementById("output").innerText =
+          "You clicked: " + this.innerText;
+      });
+    });
+  </script>
+
+</body>
+</html>
