@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error Finding Quiz</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    .code-box {
+      background: #f4f4f4;
+      padding: 10px;
+      margin: 10px 0;
+      font-family: monospace;
+    }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Error Finding Quiz App</h2>
+
+  <div id="quiz"></div>
+  <button onclick="nextQuestion()">Next</button>
+
+  <p id="result"></p>
+
+  <script>
+    const questions = [
+      {
+        code: "let x = 10;\nlet x = 20;\nconsole.log(x);",
+        options: [
+          "No error",
+          "Redeclaration of let variable",
+          "console.log error"
+        ],
+        answer: 1
+      },
+      {
+        code: "console.log(y);\nlet y = 5;",
+        options: [
+          "Syntax Error",
+          "Hoisting Error",
+          "Reference Error"
+        ],
+        answer: 2
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const q = questions[current];
+      let html = `
+        <div class="code-box">${q.code.replace(/\n/g, "<br>")}</div>
+      `;
+
+      q.options.forEach((opt, index) => {
+        html += `
+          <input type="radio" name="option" value="${index}"> ${opt}<br>
+        `;
+      });
+
+      document.getElementById("quiz").innerHTML = html;
+    }
+
+    function nextQuestion() {
+      const selected = document.querySelector('input[name="option"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer");
+        return;
+      }
+
+      if (parseInt(selected.value) === questions[current].answer) {
+        score++;
+      }
+
+      current++;
+
+      if (current < questions.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quiz").innerHTML = "";
+        document.getElementById("result").innerText =
+          "Quiz Finished! Your Score: " + score;
+      }
+    }
+
+    loadQuestion();
+  </script>
+
+</body>
+</html>

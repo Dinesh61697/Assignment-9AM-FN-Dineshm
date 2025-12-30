@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fixed Counter App</title>
+</head>
+<body>
+
+  <h2>Counter App</h2>
+  <p id="count">0</p>
+  <button onclick="increase()">Increase</button>
+
+  <script>
+    let counter = 0;
+
+    function increase() {
+      counter = counter + 1;  
+      document.getElementById("count").innerText = counter;
+    }
+  </script>
+
+</body>
+</html>

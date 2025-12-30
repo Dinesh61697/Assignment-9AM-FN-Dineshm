@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple calculator</title>
+</head>
+<body>
+    <h2>calculator</h2>
+
+    <input type="text" id="num1" placeholder="Enter number 1"><br><br>
+    <input type="text" id="num2" placeholder="Enter number 2"><br><br>
+
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+
+    <p id="error" style="color:orangered"></p>
+    <h3 id="result"></h3>
+
+    <script>
+          function calculate(op) {
+      let a = document.getElementById("num1").value;
+      let b = document.getElementById("num2").value;
+
+      document.getElementById("error").innerText = "";
+      document.getElementById("result").innerText = "";
+
+      if (a === "" || b === "") {
+        document.getElementById("error").innerText = "Please enter both numbers";
+        return;
+      }
+
+      if (isNaN(a) || isNaN(b)) {
+        document.getElementById("error").innerText = "Enter valid numbers";
+        return;
+      }
+
+      a = Number(a);
+      b = Number(b);
+
+      if (op === "/" && b === 0) {
+        document.getElementById("error").innerText = "Cannot divide by zero";
+        return;
+      }
+
+      let res;
+      if (op === "+") res = a + b;
+      if (op === "-") res = a - b;
+      if (op === "*") res = a * b;
+      if (op === "/") res = a / b;
+
+      document.getElementById("result").innerText = "Result: " + res;
+    } 
+
+    </script>
+
+    
+</body>
+</html>

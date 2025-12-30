@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Login</title>
+</head>
+<body>
+
+  <h2>Login</h2>
+
+  <form id="form">
+    <input type="text" id="user" placeholder="Username"><br><br>
+    <span id="userErr" style="color:red"></span><br>
+
+    <input type="text" id="email" placeholder="Email"><br><br>
+    <span id="emailErr" style="color:red"></span><br>
+
+    <input type="password" id="pass" placeholder="Password"><br><br>
+    <span id="passErr" style="color:red"></span><br>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let user = document.getElementById("user").value;
+      let email = document.getElementById("email").value;
+      let pass = document.getElementById("pass").value;
+
+      document.getElementById("userErr").innerText = "";
+      document.getElementById("emailErr").innerText = "";
+      document.getElementById("passErr").innerText = "";
+
+      if (user === "") {
+        document.getElementById("userErr").innerText = "Enter username";
+        return;
+      }
+
+      if (email === "") {
+        document.getElementById("emailErr").innerText = "Enter email";
+        return;
+      }
+
+      if (pass === "") {
+        document.getElementById("passErr").innerText = "Enter password";
+        return;
+      }
+
+      alert("Login Successful");
+    });
+  </script>
+
+</body>
+</html>
