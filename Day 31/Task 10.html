@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart using localStorage</title>
+</head>
+<body>
+
+  <h2>Product</h2>
+  <p>Mobile Phone - ₹10,000</p>
+
+  <button onclick="addToCart()">Add to Cart</button>
+  <button onclick="viewCart()">View Cart</button>
+
+  <p id="cartData"></p>
+
+  <script>
+    function addToCart() {
+      
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    
+      let product = {
+        name: "Mobile Phone",
+        price: 10000,
+        quantity: 1
+      };
+
+    
+      cart.push(product);
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      alert("Item added to cart!");
+    }
+
+    function viewCart() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      document.getElementById("cartData").innerText =
+        JSON.stringify(cart, null, 2);
+    }
+  </script>
+
+</body>
+</html>

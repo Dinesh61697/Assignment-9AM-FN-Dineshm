@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fetch Error Handling</title>
+</head>
+<body>
+
+  <button onclick="getData()">Fetch Data</button>
+  <p id="result"></p>
+
+  <script>
+    function getData() {
+      fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then(response => {
+          
+          if (!response.ok) {
+            throw new Error("Network response was not OK");
+          }
+          return response.json();
+        })
+        .then(data => {
+          document.getElementById("result").innerText = data.title;
+        })
+        .catch(error => {
+          document.getElementById("result").innerText =
+            "Error occurred: " + error.message;
+        });
+    }
+  </script>
+
+</body>
+</html>
